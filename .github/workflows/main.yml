@@ -12,7 +12,7 @@ jobs:
 
       - name: run some bash
         run: | 
-          touch testfile.txt
+          echo "some stuff" >> testfile.txt
 
       - name: set up git configuration
         run: |
