@@ -1,0 +1,26 @@
+name: Test git commit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: run some bash
+        run: | 
+          touch testfile.txt
+
+      - name: set up git configuration
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "<>"
+
+      - name: add file to repo
+        run: |
+          git add testfile.txt
+          git commit -m "new file"
+          git push origin main
