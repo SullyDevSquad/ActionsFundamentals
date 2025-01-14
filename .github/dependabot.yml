@@ -1,0 +1,15 @@
+# Set update schedule for GitHub Actions
+
+version: 2
+registries:
+  github-actions:
+    type: git
+    token: ${{ secrets.PAT }}
+    
+    
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
